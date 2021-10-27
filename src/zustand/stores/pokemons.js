@@ -9,7 +9,7 @@ const usePokemonsStore = create((set, get) => ({
             set({ isLoading: false, errorMessage: "", hasError: false})
             console.log("llamando pokemon desde zustand 1")
 
-            const pokemonResult = await apiCall({url: "https://pokeapi.co/api/v2/pokemon?limit=100&offset=100"})
+            const pokemonResult = await apiCall({url: "https://pokeapi.co/api/v2/pokemon?limit=100"})
             set({ pokemons: pokemonResult.results });
         
         }catch(error){

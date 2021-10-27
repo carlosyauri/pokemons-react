@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom"
 import { useEffect} from "react";
-
+import { Link } from "react-router-dom"
 import PokeStats from "./components/PokeStats";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage"; 
 import usePokemonsStore from "../../zustand/stores/pokemons";
 
-export default function PokeDetail(){
+export default function 
+PokeDetail(){
 
     const {id} = useParams();
     // const {getPokemonDetail, pokemonDetail, isLoading, hasError, errorMessage} = useContext(PokemonContext)
@@ -34,6 +35,12 @@ export default function PokeDetail(){
                             <p>{`Name: ${pokemonDetail?.name}`}</p>
                             <p>{`Peso: ${pokemonDetail?.weight} kgs.`}</p>
                             <p>{`Altura: ${pokemonDetail?.height} cms.`}</p>  
+
+                            <button style={{position: "absolute",
+                                marginTop: "30px",
+                                marginLeft: "-25px",}}>
+                                <Link to={`/`}>Volver</Link>
+                            </button>
                         </div>
             
                         <div class="containerDettalesCajaInfo">
@@ -41,6 +48,7 @@ export default function PokeDetail(){
                             <PokeStats  stats={pokemonDetail?.stats ?? []} />       
                         </div>
                         
+     
                     </div>
                 </>
             )}

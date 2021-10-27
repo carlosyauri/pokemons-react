@@ -5,6 +5,8 @@ export default function PokemonListItem ({name, url}){
     const getId = () => url.split("/")[6];
     
 
+    
+
     return(
 
             <div class="subContainer">
